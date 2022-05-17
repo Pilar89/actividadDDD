@@ -1,5 +1,6 @@
 package co.com.sofkau.entrenamiento.pedido.values;
 
+import co.com.sofka.domain.generic.Identity;
 import co.com.sofka.domain.generic.ValueObject;
 
 import java.time.LocalDate;
@@ -36,4 +37,6 @@ public class Fecha implements ValueObject<Fecha.Pros> {
 
   }
 
+  public static class MedicamentoId extends Identity {
+  }
 }

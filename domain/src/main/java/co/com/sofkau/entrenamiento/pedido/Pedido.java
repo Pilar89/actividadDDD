@@ -15,7 +15,7 @@ public class Pedido extends AggregateEvent<PedidoId> {
   protected Fecha fecha;
   protected Estado estado;
   protected Cliente cliente;
-  protected Map<MedicamentoId,Medicamento> medicamentos;
+  protected Map<Fecha.MedicamentoId,Medicamento> medicamentos;
 
 
 
@@ -40,7 +40,7 @@ public class Pedido extends AggregateEvent<PedidoId> {
 
   }
 
-  public void agregarMedicamento(MedicamentoId entityId, Nombre nombre,
+  public void agregarMedicamento(Fecha.MedicamentoId entityId, Nombre nombre,
                                  Presentacion presentacion, Laboratorio laboratorio,
                                  PrecioUnitario precioUnitario, Cantidad cantidad){
     appendChange(new MedicamentoCreado(entityId, nombre,presentacion,laboratorio, precioUnitario,cantidad)).apply();

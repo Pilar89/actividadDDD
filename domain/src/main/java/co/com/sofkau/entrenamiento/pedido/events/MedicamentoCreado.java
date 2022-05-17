@@ -1,18 +1,17 @@
 package co.com.sofkau.entrenamiento.pedido.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import co.com.sofkau.entrenamiento.pedido.MedicamentoId;
 import co.com.sofkau.entrenamiento.pedido.values.*;
 
 public class MedicamentoCreado extends DomainEvent {
-  private final MedicamentoId medicamentoId;
+  private final Fecha.MedicamentoId medicamentoId;
   private final Nombre nombre;
   private final Presentacion presentacion;
   private final Laboratorio laboratorio;
   private final PrecioUnitario precioUnitario;
   private final Cantidad cantidad;
 
-  public MedicamentoCreado(MedicamentoId medicamentoId, Nombre nombre,
+  public MedicamentoCreado(Fecha.MedicamentoId medicamentoId, Nombre nombre,
                            Presentacion presentacion, Laboratorio laboratorio,
                            PrecioUnitario precioUnitario, Cantidad cantidad) {
     super("co.com.sofka.ddd.MedicamentoCreado");
@@ -25,7 +24,7 @@ public class MedicamentoCreado extends DomainEvent {
 
   }
 
-  public MedicamentoId getMedicamentoId() {
+  public Fecha.MedicamentoId getMedicamentoId() {
     return medicamentoId;
   }
 
