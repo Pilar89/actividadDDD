@@ -1,8 +1,8 @@
-package co.com.sofkau.entrenamiento.Pedido.events;
+package co.com.sofkau.entrenamiento.pedido.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import co.com.sofkau.entrenamiento.Pedido.MedicamentoId;
-import co.com.sofkau.entrenamiento.Pedido.values.*;
+import co.com.sofkau.entrenamiento.pedido.MedicamentoId;
+import co.com.sofkau.entrenamiento.pedido.values.*;
 
 public class MedicamentoCreado extends DomainEvent {
   private final MedicamentoId medicamentoId;

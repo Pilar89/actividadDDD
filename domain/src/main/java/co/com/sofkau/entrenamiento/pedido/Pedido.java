@@ -1,10 +1,10 @@
-package co.com.sofkau.entrenamiento.Pedido;
+package co.com.sofkau.entrenamiento.pedido;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofka.domain.generic.DomainEvent;
-import co.com.sofkau.entrenamiento.Pedido.events.MedicamentoCreado;
-import co.com.sofkau.entrenamiento.Pedido.events.PedidoCreado;
-import co.com.sofkau.entrenamiento.Pedido.values.*;
+import co.com.sofkau.entrenamiento.pedido.events.MedicamentoCreado;
+import co.com.sofkau.entrenamiento.pedido.events.PedidoCreado;
+import co.com.sofkau.entrenamiento.pedido.values.*;
 
 import java.util.List;
 import java.util.Map;

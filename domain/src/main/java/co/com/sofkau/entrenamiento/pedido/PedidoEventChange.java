@@ -1,8 +1,8 @@
-package co.com.sofkau.entrenamiento.Pedido;
+package co.com.sofkau.entrenamiento.pedido;
 
 import co.com.sofka.domain.generic.EventChange;
-import co.com.sofkau.entrenamiento.Pedido.events.MedicamentoCreado;
-import co.com.sofkau.entrenamiento.Pedido.events.PedidoCreado;
+import co.com.sofkau.entrenamiento.pedido.events.MedicamentoCreado;
+import co.com.sofkau.entrenamiento.pedido.events.PedidoCreado;
 
 import java.util.HashMap;
 

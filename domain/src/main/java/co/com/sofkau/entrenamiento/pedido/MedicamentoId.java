@@ -1,4 +1,4 @@
-package co.com.sofkau.entrenamiento.Pedido;
+package co.com.sofkau.entrenamiento.pedido;
 
 import co.com.sofka.domain.generic.Identity;
 

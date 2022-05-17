@@ -1,10 +1,10 @@
-package co.com.sofkau.entrenamiento.Pedido.events;
+package co.com.sofkau.entrenamiento.pedido.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import co.com.sofkau.entrenamiento.Pedido.Cliente;
-import co.com.sofkau.entrenamiento.Pedido.values.Estado;
-import co.com.sofkau.entrenamiento.Pedido.values.Fecha;
-import co.com.sofkau.entrenamiento.Pedido.values.Vendedor;
+import co.com.sofkau.entrenamiento.pedido.Cliente;
+import co.com.sofkau.entrenamiento.pedido.values.Estado;
+import co.com.sofkau.entrenamiento.pedido.values.Fecha;
+import co.com.sofkau.entrenamiento.pedido.values.Vendedor;
 
 public class PedidoCreado extends DomainEvent {
   private final Cliente cliente;

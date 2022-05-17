@@ -1,7 +1,7 @@
-package co.com.sofkau.entrenamiento.Pedido;
+package co.com.sofkau.entrenamiento.pedido;
 
 import co.com.sofka.domain.generic.Entity;
-import co.com.sofkau.entrenamiento.Pedido.values.*;
+import co.com.sofkau.entrenamiento.pedido.values.*;
 
 public class Medicamento extends Entity<MedicamentoId> {
   protected Nombre nombre;

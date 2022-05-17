@@ -1,13 +1,14 @@
-package co.com.sofkau.entrenamiento.Pedido.values;
+package co.com.sofkau.entrenamiento.pedido.values;
 
 import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class NombreCliente implements ValueObject<String> {
+public class Direccion implements ValueObject<String> {
+
   private final String value;
 
-  public  NombreCliente(String value){
+  public  Direccion(String value){
     this.value = Objects.requireNonNull(value);
     if (this.value.isBlank()){
       throw new IllegalArgumentException("No puede estar en blanco");
