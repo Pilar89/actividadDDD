@@ -1,0 +1,50 @@
+package co.com.sofkau.logisticaYDistribucion.pedido.events;
+
+import co.com.sofka.domain.generic.DomainEvent;
+import co.com.sofkau.logisticaYDistribucion.pedido.values.*;
+
+public class MedicamentoCreado extends DomainEvent {
+  private final Fecha.MedicamentoId medicamentoId;
+  private final Nombre nombre;
+  private final Presentacion presentacion;
+  private final Laboratorio laboratorio;
+  private final PrecioUnitario precioUnitario;
+  private final Cantidad cantidad;
+
+  public MedicamentoCreado(Fecha.MedicamentoId medicamentoId, Nombre nombre,
+                           Presentacion presentacion, Laboratorio laboratorio,
+                           PrecioUnitario precioUnitario, Cantidad cantidad) {
+    super("co.com.sofka.ddd.MedicamentoCreado");
+    this.medicamentoId = medicamentoId;
+    this.nombre = nombre;
+    this.presentacion = presentacion;
+    this.laboratorio = laboratorio;
+    this.precioUnitario = precioUnitario;
+    this.cantidad = cantidad;
+
+  }
+
+  public Fecha.MedicamentoId getMedicamentoId() {
+    return medicamentoId;
+  }
+
+  public Nombre getNombre() {
+    return nombre;
+  }
+
+  public Presentacion getPresentacion() {
+    return presentacion;
+  }
+
+  public Laboratorio getLaboratorio() {
+    return laboratorio;
+  }
+
+  public PrecioUnitario getPrecioUnitario() {
+    return precioUnitario;
+  }
+
+  public Cantidad getCantidad() {
+    return cantidad;
+  }
+}
