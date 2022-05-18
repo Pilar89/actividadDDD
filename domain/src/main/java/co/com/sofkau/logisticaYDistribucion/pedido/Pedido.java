@@ -42,7 +42,6 @@ public class Pedido extends AggregateEvent<PedidoId> {
     var pedido = new Pedido(entityId);
     events.forEach(pedido::applyEvent);
     return pedido;
-
   }
 
   // comportamientos
@@ -65,8 +64,6 @@ public class Pedido extends AggregateEvent<PedidoId> {
     appendChange(new CostoCalculado(precioUnitario, costoPedido)).apply();
   }
 
-  public Vendedor vendedor(){
-    return vendedor;
-  }
+
 
 }
