@@ -1,16 +1,16 @@
 package co.com.sofkau.logisticaYDistribucion.factura;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofkau.generic.Cliente;
+import co.com.sofkau.generic.Vendedor;
 import co.com.sofkau.generic.values.Fecha;
-import co.com.sofkau.logisticaYDistribucion.factura.events.CostoCalculado;
 import co.com.sofkau.logisticaYDistribucion.factura.events.EstadoActualizado;
+import co.com.sofkau.logisticaYDistribucion.factura.events.FacturaAgregada;
 import co.com.sofkau.logisticaYDistribucion.factura.events.PedidoEliminado;
 import co.com.sofkau.logisticaYDistribucion.factura.values.CostoTotalPedidos;
 import co.com.sofkau.generic.values.Estado;
 import co.com.sofkau.logisticaYDistribucion.factura.values.FacturaId;
-import co.com.sofkau.logisticaYDistribucion.pedido.Cliente;
 import co.com.sofkau.logisticaYDistribucion.pedido.Pedido;
-import co.com.sofkau.logisticaYDistribucion.pedido.Vendedor;
 import co.com.sofkau.logisticaYDistribucion.pedido.events.PedidoCreado;
 import co.com.sofkau.logisticaYDistribucion.pedido.values.PedidoId;
 
@@ -29,14 +29,10 @@ public class Factura extends AggregateEvent<FacturaId>{
         super(entityId);
     }
 
-    public Factura(FacturaId facturaId, Fecha fecha, Estado estado,
-                   CostoTotalPedidos costoTotalPedidos, Map<PedidoId,Pedido> pedidos, Cliente cliente) {
-        super(facturaId);
-        this.fecha = fecha;
-        this.estado = estado;
-        this.costoTotalPedidos = costoTotalPedidos;
-        this.pedidos = pedidos;
-        this.cliente = cliente;
+    public Factura(FacturaId entityId, Fecha fecha, Estado estado, Cliente cliente) {
+        super(entityId);
+        appendChange(new FacturaAgregada(fecha, estado, cliente)).apply();
+        subscribe(new FacturaEventChange(this));
     }
 
     //comportamientos
@@ -45,12 +41,8 @@ public class Factura extends AggregateEvent<FacturaId>{
         appendChange(new EstadoActualizado(facturaId, estado)).apply();
     }
 
-    public void agregarPedido (PedidoId pedidoId, Cliente cliente, Vendedor vendedor, Fecha fecha, Estado estado) {
+    public void agregarPedido (Pedido pedidoId, Cliente cliente, Vendedor vendedor, Fecha fecha, Estado estado) {
         appendChange(new PedidoCreado(cliente, vendedor, fecha, estado));
-    }
-
-    public void calcularCostoTotal(CostoTotalPedidos costoTotalPedidos){
-        appendChange(new CostoCalculado(costoTotalPedidos)).apply();
     }
 
     public void eliminarPedido(PedidoId pedidoId){

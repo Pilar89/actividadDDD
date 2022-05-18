@@ -17,7 +17,6 @@ public class FacturaEventChange extends EventChange {
             factura.fecha = event.getFecha();
             factura.cliente = event.getCliente();
             factura.estado = event.getEstado();
-            factura.costoTotalPedidos = event.getCostoTotal();
             factura.pedidos = new HashMap<>();
         });
 
@@ -35,8 +34,7 @@ public class FacturaEventChange extends EventChange {
         apply((EstadoActualizado event) -> {
             var facturaId = event.getEntityId();
             var estadoActualizado = event.getEstado().value();
-            var estado = new Estado(estadoActualizado);
-            factura.estado = estado;
+            factura.estado = new Estado(estadoActualizado);
         });
 
     }

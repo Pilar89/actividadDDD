@@ -10,7 +10,6 @@ import co.com.sofkau.generic.Cliente;
 import co.com.sofkau.logisticaYDistribucion.pedido.events.EstadoActualizado;
 import co.com.sofkau.logisticaYDistribucion.pedido.events.MedicamentoEliminado;
 import co.com.sofkau.logisticaYDistribucion.pedido.values.PedidoId;
-import co.com.sofkau.logisticaYDistribucion.pedido.events.CostoCalculado;
 import co.com.sofkau.logisticaYDistribucion.pedido.events.MedicamentoCreado;
 import co.com.sofkau.logisticaYDistribucion.pedido.events.PedidoCreado;
 import co.com.sofkau.logisticaYDistribucion.pedido.values.*;
@@ -60,10 +59,6 @@ public class Pedido extends AggregateEvent<PedidoId> {
 
   public void eliminarMedicamento(MedicamentoId entityId){
     appendChange(new MedicamentoEliminado(entityId)).apply();
-  }
-
-  public void calcularPedido(PrecioUnitario precioUnitario, CostoTotalPedido costoPedido){
-    appendChange(new CostoCalculado(precioUnitario, costoPedido)).apply();
   }
 
 }

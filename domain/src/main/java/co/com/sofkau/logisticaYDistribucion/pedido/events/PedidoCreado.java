@@ -5,12 +5,14 @@ import co.com.sofkau.generic.Cliente;
 import co.com.sofkau.generic.Vendedor;
 import co.com.sofkau.generic.values.Estado;
 import co.com.sofkau.generic.values.Fecha;
+import co.com.sofkau.logisticaYDistribucion.pedido.values.CostoTotalPedido;
 
 public class PedidoCreado extends DomainEvent {
   private final Cliente cliente;
   private final Vendedor vendedor;
   private final Fecha fecha;
   private final Estado estado;
+  private final CostoTotalPedido costoPedido;
 
   public PedidoCreado(Cliente cliente, Vendedor vendedor, Fecha fecha, Estado estado){
     super("co.com.sofka.ddd.PedidoCreado");
@@ -18,6 +20,7 @@ public class PedidoCreado extends DomainEvent {
     this.vendedor = vendedor;
     this.fecha = fecha;
     this.estado = estado;
+    this.costoPedido = new CostoTotalPedido(0D);
   }
 
   public Cliente getCliente() {
@@ -34,5 +37,8 @@ public class PedidoCreado extends DomainEvent {
 
   public Estado getEstado() {
     return estado;
+  }
+  public CostoTotalPedido getCostoPedido() {
+    return costoPedido;
   }
 }
