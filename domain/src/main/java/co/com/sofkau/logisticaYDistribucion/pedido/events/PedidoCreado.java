@@ -1,8 +1,8 @@
 package co.com.sofkau.logisticaYDistribucion.pedido.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import co.com.sofkau.logisticaYDistribucion.pedido.Cliente;
-import co.com.sofkau.logisticaYDistribucion.pedido.Vendedor;
+import co.com.sofkau.generic.Cliente;
+import co.com.sofkau.generic.Vendedor;
 import co.com.sofkau.generic.values.Estado;
 import co.com.sofkau.generic.values.Fecha;
 

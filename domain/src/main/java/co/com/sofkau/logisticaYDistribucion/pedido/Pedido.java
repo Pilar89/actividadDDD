@@ -5,6 +5,8 @@ import co.com.sofkau.generic.values.Estado;
 import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofkau.generic.values.Fecha;
 import co.com.sofkau.generic.values.Nombre;
+import co.com.sofkau.generic.Vendedor;
+import co.com.sofkau.generic.Cliente;
 import co.com.sofkau.logisticaYDistribucion.pedido.events.EstadoActualizado;
 import co.com.sofkau.logisticaYDistribucion.pedido.events.MedicamentoEliminado;
 import co.com.sofkau.logisticaYDistribucion.pedido.values.PedidoId;
