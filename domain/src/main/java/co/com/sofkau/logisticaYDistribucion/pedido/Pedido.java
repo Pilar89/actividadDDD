@@ -6,6 +6,7 @@ import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofkau.generic.values.Fecha;
 import co.com.sofkau.generic.values.Nombre;
 import co.com.sofkau.logisticaYDistribucion.pedido.events.EstadoActualizado;
+import co.com.sofkau.logisticaYDistribucion.pedido.events.MedicamentoEliminado;
 import co.com.sofkau.logisticaYDistribucion.pedido.values.PedidoId;
 import co.com.sofkau.logisticaYDistribucion.pedido.events.CostoCalculado;
 import co.com.sofkau.logisticaYDistribucion.pedido.events.MedicamentoCreado;
@@ -54,6 +55,10 @@ public class Pedido extends AggregateEvent<PedidoId> {
                                  Presentacion presentacion, Laboratorio laboratorio,
                                  PrecioUnitario precioUnitario, Cantidad cantidad){
     appendChange(new MedicamentoCreado(entityId, nombre,presentacion,laboratorio, precioUnitario,cantidad)).apply();
+  }
+
+  public void eliminarMedicamento(MedicamentoId entityId){
+    appendChange(new MedicamentoEliminado(entityId)).apply();
   }
 
   public void calcularPedido(PrecioUnitario precioUnitario, CostoPedido costoPedido){
