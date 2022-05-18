@@ -13,4 +13,12 @@ public class CostoTotalPedido implements ValueObject<Double> {
     public Double value() {
         return null;
     }
+
+    public CostoTotalPedido aumentar(Double value) {
+        return new CostoTotalPedido(this.value + value);
+    }
+
+    public CostoTotalPedido disminuir(Double value) {
+        return new CostoTotalPedido(this.value - value);
+    }
 }

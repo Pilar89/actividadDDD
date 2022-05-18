@@ -11,6 +11,7 @@ public class PedidoCreado extends DomainEvent {
     public PedidoCreado(Pedido pedido) {
         super("co.com.sofkau.factura.events.PedidoAgregado");
         this.pedido = pedido;
+
     }
 
     public Pedido getPedido() {
