@@ -15,9 +15,4 @@ public class PedidoId extends Identity {
   public static PedidoId of(String id){
     return new PedidoId(id);
  }
-
-
-
-
-
 }

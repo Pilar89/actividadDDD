@@ -3,7 +3,7 @@ package co.com.sofkau.logisticaYDistribucion.factura.events;
 import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofkau.generic.values.Estado;
 import co.com.sofkau.generic.values.Fecha;
-import co.com.sofkau.logisticaYDistribucion.factura.values.CostoPedido;
+import co.com.sofkau.logisticaYDistribucion.factura.values.CostoTotalPedidos;
 import co.com.sofkau.logisticaYDistribucion.pedido.Cliente;
 import co.com.sofkau.logisticaYDistribucion.pedido.Pedido;
 import co.com.sofkau.logisticaYDistribucion.pedido.Vendedor;
@@ -15,12 +15,12 @@ public class FacturaAgregada extends DomainEvent {
 
     private final Fecha fecha;
     private final Estado estado;
-    private final CostoPedido costoTotal;
+    private final CostoTotalPedidos costoTotal;
     private final List<Pedido> pedidos;
     private final Cliente cliente;
     private final Vendedor vendedor;
 
-    public FacturaAgregada(Fecha fecha, Estado estado, CostoPedido costoTotal, List<Pedido> pedidos, Cliente cliente, Vendedor vendedor) {
+    public FacturaAgregada(Fecha fecha, Estado estado, CostoTotalPedidos costoTotal, List<Pedido> pedidos, Cliente cliente, Vendedor vendedor) {
         super("co.com.sofkau.logisticaYDistribucion.factura");
         this.fecha = fecha;
         this.estado = estado;
@@ -38,7 +38,7 @@ public class FacturaAgregada extends DomainEvent {
         return estado;
     }
 
-    public CostoPedido getCostoTotal() {
+    public CostoTotalPedidos getCostoTotal() {
         return costoTotal;
     }
 

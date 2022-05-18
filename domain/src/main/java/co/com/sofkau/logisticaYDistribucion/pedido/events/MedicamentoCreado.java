@@ -10,6 +10,7 @@ import co.com.sofkau.logisticaYDistribucion.pedido.values.Presentacion;
 
 
 public class MedicamentoCreado extends DomainEvent {
+
   private final MedicamentoId medicamentoId;
   private final Nombre nombre;
   private final Presentacion presentacion;

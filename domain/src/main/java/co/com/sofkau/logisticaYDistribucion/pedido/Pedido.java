@@ -22,7 +22,7 @@ public class Pedido extends AggregateEvent<PedidoId> {
   protected Fecha fecha;
   protected Estado estado;
   protected Cliente cliente;
-  protected CostoPedido costoPedido;
+  protected CostoTotalPedido costoPedido;
   protected Map<MedicamentoId,Medicamento> medicamentos;
 
 
@@ -60,7 +60,7 @@ public class Pedido extends AggregateEvent<PedidoId> {
     appendChange(new MedicamentoEliminado(entityId)).apply();
   }
 
-  public void calcularPedido(PrecioUnitario precioUnitario, CostoPedido costoPedido){
+  public void calcularPedido(PrecioUnitario precioUnitario, CostoTotalPedido costoPedido){
     appendChange(new CostoCalculado(precioUnitario, costoPedido)).apply();
   }
 

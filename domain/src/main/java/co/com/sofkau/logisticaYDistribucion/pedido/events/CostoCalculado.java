@@ -1,15 +1,15 @@
 package co.com.sofkau.logisticaYDistribucion.pedido.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
-import co.com.sofkau.logisticaYDistribucion.pedido.values.CostoPedido;
+import co.com.sofkau.logisticaYDistribucion.pedido.values.CostoTotalPedido;
 import co.com.sofkau.logisticaYDistribucion.pedido.values.PrecioUnitario;
 
 public class CostoCalculado extends DomainEvent {
 
     private final PrecioUnitario precioUnitario;
-    private final CostoPedido costoPedido;
+    private final CostoTotalPedido costoPedido;
 
-    public CostoCalculado(PrecioUnitario precioUnitario, CostoPedido costoPedido) {
+    public CostoCalculado(PrecioUnitario precioUnitario, CostoTotalPedido costoPedido) {
         super("co.com.sofkau.logisticaYDistribucion.pedido.events.CostoCalculado");
         this.precioUnitario = precioUnitario;
         this.costoPedido = costoPedido;
@@ -19,7 +19,7 @@ public class CostoCalculado extends DomainEvent {
         return precioUnitario;
     }
 
-    public CostoPedido getCostoPedido() {
+    public CostoTotalPedido getCostoPedido() {
         return costoPedido;
     }
 }
