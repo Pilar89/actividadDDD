@@ -4,6 +4,7 @@ import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofkau.generic.values.Fecha;
 import co.com.sofkau.logisticaYDistribucion.factura.events.CostoCalculado;
 import co.com.sofkau.logisticaYDistribucion.factura.events.EstadoActualizado;
+import co.com.sofkau.logisticaYDistribucion.factura.events.PedidoEliminado;
 import co.com.sofkau.logisticaYDistribucion.factura.values.CostoTotalPedidos;
 import co.com.sofkau.generic.values.Estado;
 import co.com.sofkau.logisticaYDistribucion.factura.values.FacturaId;
@@ -51,5 +52,10 @@ public class Factura extends AggregateEvent<FacturaId>{
     public void calcularCostoTotal(CostoTotalPedidos costoTotalPedidos){
         appendChange(new CostoCalculado(costoTotalPedidos)).apply();
     }
+
+    public void eliminarPedido(PedidoId pedidoId){
+        appendChange(new PedidoEliminado(pedidoId)).apply();
+    }
+
 
 }

@@ -64,6 +64,4 @@ public class Pedido extends AggregateEvent<PedidoId> {
     appendChange(new CostoCalculado(precioUnitario, costoPedido)).apply();
   }
 
-
-
 }
