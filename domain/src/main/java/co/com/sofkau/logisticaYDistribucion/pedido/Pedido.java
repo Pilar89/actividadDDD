@@ -1,7 +1,15 @@
 package co.com.sofkau.logisticaYDistribucion.pedido;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofkau.generic.values.Estado;
 import co.com.sofka.domain.generic.DomainEvent;
+import co.com.sofkau.generic.values.Fecha;
+import co.com.sofkau.generic.values.Nombre;
+import co.com.sofkau.generic.Vendedor;
+import co.com.sofkau.generic.Cliente;
+import co.com.sofkau.logisticaYDistribucion.pedido.events.EstadoActualizado;
+import co.com.sofkau.logisticaYDistribucion.pedido.events.MedicamentoEliminado;
+import co.com.sofkau.logisticaYDistribucion.pedido.values.PedidoId;
 import co.com.sofkau.logisticaYDistribucion.pedido.events.MedicamentoCreado;
 import co.com.sofkau.logisticaYDistribucion.pedido.events.PedidoCreado;
 import co.com.sofkau.logisticaYDistribucion.pedido.values.*;
@@ -15,9 +23,8 @@ public class Pedido extends AggregateEvent<PedidoId> {
   protected Fecha fecha;
   protected Estado estado;
   protected Cliente cliente;
-  protected Map<Fecha.MedicamentoId,Medicamento> medicamentos;
-
-
+  protected CostoTotalPedido costoPedido;
+  protected Map<MedicamentoId,Medicamento> medicamentos;
 
 
   public Pedido(PedidoId entityId, Cliente cliente, Vendedor vendedor, Fecha fecha, Estado estado) {
@@ -36,23 +43,24 @@ public class Pedido extends AggregateEvent<PedidoId> {
     var pedido = new Pedido(entityId);
     events.forEach(pedido::applyEvent);
     return pedido;
-
-
   }
 
-  public void agregarMedicamento(Fecha.MedicamentoId entityId, Nombre nombre,
+  // comportamientos
+
+  public void cambiarEstado(PedidoId pedidoId, Estado estado){
+    appendChange(new EstadoActualizado(pedidoId, estado)).apply();
+  }
+
+  public void agregarMedicamento(MedicamentoId entityId, Nombre nombre,
                                  Presentacion presentacion, Laboratorio laboratorio,
                                  PrecioUnitario precioUnitario, Cantidad cantidad){
     appendChange(new MedicamentoCreado(entityId, nombre,presentacion,laboratorio, precioUnitario,cantidad)).apply();
-
-
   }
 
-  public Vendedor vendedor(){
-    return vendedor;
+  public void eliminarMedicamento(MedicamentoId entityId){
+    appendChange(new MedicamentoEliminado(entityId)).apply();
   }
 
-
-
+  public CostoTotalPedido getCostoTotal(){ return costoPedido; }
 
 }
