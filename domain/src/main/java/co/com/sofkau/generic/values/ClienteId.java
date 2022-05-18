@@ -1,4 +1,4 @@
-package co.com.sofkau.logisticaYDistribucion.pedido.values;
+package co.com.sofkau.generic.values;
 
 import co.com.sofka.domain.generic.Identity;
 
