@@ -13,7 +13,5 @@ Qdomain/src/main/java/co/com/sofkau/logisticaYDistribucion/pedido/Medicamento.ja
 Ndomain/src/main/java/co/com/sofkau/logisticaYDistribucion/pedido/Vendedor.java,a\3\a34915819cf000b0ae0c73cb9a102c1974c63de8
 è
 _domain/src/main/java/co/com/sofkau/logisticaYDistribucion/factura/events/EstadoActualizado.java,3\d\3df7e87032a774233a2287dd53a52e5eaa94199d
-m
-=domain/src/main/java/co/com/sofkau/generic/values/Estado.java,c\e\ce06c2a54fa8b96208440e0caf500db7978c7f5e
 é
 ^domain/src/main/java/co/com/sofkau/logisticaYDistribucion/pedido/events/EstadoActualizado.java,4\9\49c38c4068449ee1acc8e3b2f8238b6f62cf6358

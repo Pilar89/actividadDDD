@@ -61,4 +61,6 @@ public class Pedido extends AggregateEvent<PedidoId> {
     appendChange(new MedicamentoEliminado(entityId)).apply();
   }
 
+  public CostoTotalPedido getCostoTotal(){ return costoPedido; }
+
 }
