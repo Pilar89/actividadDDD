@@ -9,7 +9,7 @@
 ##### Se realizó la implementación de DDD (Domain Driven Design) en un empresa comercializadora de medicamentos.
 ####  2- Análisis del problema:
 #### En nuestro modelo de dominio tenenemos los siguientes contextos:
-#### Core domain:  Logística y distribución
+#### Core domain:  Distribución
 #### El modelo completo se encuentra en el siguiete link: https://app.diagrams.net/#G13MFWA5EimY-Y9YIBLcw0XUAlw-B72hVZ
 
 ![img.png](img.png)
