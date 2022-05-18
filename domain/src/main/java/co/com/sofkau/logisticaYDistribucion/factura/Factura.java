@@ -7,6 +7,9 @@ import co.com.sofkau.generic.values.Estado;
 import co.com.sofkau.logisticaYDistribucion.factura.values.FacturaId;
 import co.com.sofkau.logisticaYDistribucion.pedido.Cliente;
 import co.com.sofkau.logisticaYDistribucion.pedido.Pedido;
+import co.com.sofkau.logisticaYDistribucion.pedido.Vendedor;
+import co.com.sofkau.logisticaYDistribucion.pedido.events.PedidoCreado;
+import co.com.sofkau.logisticaYDistribucion.pedido.values.PedidoId;
 
 import java.util.List;
 
@@ -16,6 +19,7 @@ public class Factura extends AggregateEvent<FacturaId>{
     protected CostoTotal costoTotal;
     protected List<Pedido> pedidos;
     protected Cliente cliente;
+    protected Vendedor vendedor;
 
     public Factura(FacturaId entityId) {
         super(entityId);
@@ -30,6 +34,9 @@ public class Factura extends AggregateEvent<FacturaId>{
         this.cliente = cliente;
     }
 
+    public void agregarPedido (PedidoId entityId, Cliente cliente, Vendedor vendedor, Fecha fecha, Estado estado) {
+        appendChange(new PedidoCreado(entityId, cliente, vendedor, fecha, estado));
+    }
 
 
 }

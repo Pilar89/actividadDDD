@@ -11,6 +11,7 @@ public class PedidoCreado extends DomainEvent {
   private final Vendedor vendedor;
   private final Fecha fecha;
   private final Estado estado;
+
   public PedidoCreado(Cliente cliente, Vendedor vendedor, Fecha fecha, Estado estado){
     super("co.com.sofka.ddd.PedidoCreado");
     this.cliente = cliente;
