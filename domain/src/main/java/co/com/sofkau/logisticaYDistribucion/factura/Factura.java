@@ -2,6 +2,7 @@ package co.com.sofkau.logisticaYDistribucion.factura;
 
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofkau.generic.values.Fecha;
+import co.com.sofkau.logisticaYDistribucion.factura.events.EstadoActualizado;
 import co.com.sofkau.logisticaYDistribucion.factura.values.CostoTotal;
 import co.com.sofkau.generic.values.Estado;
 import co.com.sofkau.logisticaYDistribucion.factura.values.FacturaId;
@@ -25,8 +26,8 @@ public class Factura extends AggregateEvent<FacturaId>{
         super(entityId);
     }
 
-    public Factura(FacturaId entityId, Fecha fecha, Estado estado, CostoTotal costoTotal, List<Pedido> pedidos, Cliente cliente, Vendedor vendedor) {
-        super(entityId);
+    public Factura(FacturaId facturaId, Fecha fecha, Estado estado, CostoTotal costoTotal, List<Pedido> pedidos, Cliente cliente, Vendedor vendedor) {
+        super(facturaId);
         this.fecha = fecha;
         this.estado = estado;
         this.costoTotal = costoTotal;
@@ -35,8 +36,12 @@ public class Factura extends AggregateEvent<FacturaId>{
         this.vendedor = vendedor;
     }
 
-    public void agregarPedido (PedidoId entityId, Cliente cliente, Vendedor vendedor, Fecha fecha, Estado estado) {
+    public void agregarPedido (PedidoId pedidoId, Cliente cliente, Vendedor vendedor, Fecha fecha, Estado estado) {
         appendChange(new PedidoCreado(cliente, vendedor, fecha, estado));
+    }
+
+    public void cambiarEstado(FacturaId facturaId, Estado estado){
+        appendChange(new EstadoActualizado(facturaId, estado)).apply();
     }
 
 }

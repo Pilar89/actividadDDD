@@ -40,22 +40,16 @@ public class Pedido extends AggregateEvent<PedidoId> {
     events.forEach(pedido::applyEvent);
     return pedido;
 
-
   }
 
   public void agregarMedicamento(MedicamentoId entityId, Nombre nombre,
                                  Presentacion presentacion, Laboratorio laboratorio,
                                  PrecioUnitario precioUnitario, Cantidad cantidad){
     appendChange(new MedicamentoCreado(entityId, nombre,presentacion,laboratorio, precioUnitario,cantidad)).apply();
-
-
   }
 
   public Vendedor vendedor(){
     return vendedor;
   }
-
-
-
 
 }

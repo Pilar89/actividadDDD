@@ -23,10 +23,6 @@ public class PedidoEventChange extends EventChange {
 
     });
 
-
   }
-
-
-
 
 }
