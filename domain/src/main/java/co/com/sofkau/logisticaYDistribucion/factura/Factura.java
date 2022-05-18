@@ -25,18 +25,18 @@ public class Factura extends AggregateEvent<FacturaId>{
         super(entityId);
     }
 
-    public Factura(FacturaId entityId, Fecha fecha, Estado estado, CostoTotal costoTotal, List<Pedido> pedidos, Cliente cliente) {
+    public Factura(FacturaId entityId, Fecha fecha, Estado estado, CostoTotal costoTotal, List<Pedido> pedidos, Cliente cliente, Vendedor vendedor) {
         super(entityId);
         this.fecha = fecha;
         this.estado = estado;
         this.costoTotal = costoTotal;
         this.pedidos = pedidos;
         this.cliente = cliente;
+        this.vendedor = vendedor;
     }
 
     public void agregarPedido (PedidoId entityId, Cliente cliente, Vendedor vendedor, Fecha fecha, Estado estado) {
-        appendChange(new PedidoCreado(entityId, cliente, vendedor, fecha, estado));
+        appendChange(new PedidoCreado(cliente, vendedor, fecha, estado));
     }
-
 
 }
