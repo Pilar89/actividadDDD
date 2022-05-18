@@ -4,16 +4,17 @@ import co.com.sofka.domain.generic.ValueObject;
 
 import java.util.Objects;
 
-public class PrecioUnitario implements ValueObject<Integer> {
+public class PrecioUnitario implements ValueObject<Double> {
 
-  private final Integer value;
+  private final Double value;
 
-  public  PrecioUnitario(Integer value){
+  public  PrecioUnitario(Double value){
     this.value = Objects.requireNonNull(value);
 
   }
+
   @Override
-  public Integer value() {
+  public Double value() {
     return value;
   }
 }

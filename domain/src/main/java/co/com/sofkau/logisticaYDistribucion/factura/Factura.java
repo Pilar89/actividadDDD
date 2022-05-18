@@ -3,7 +3,7 @@ package co.com.sofkau.logisticaYDistribucion.factura;
 import co.com.sofka.domain.generic.AggregateEvent;
 import co.com.sofkau.generic.values.Fecha;
 import co.com.sofkau.logisticaYDistribucion.factura.events.EstadoActualizado;
-import co.com.sofkau.logisticaYDistribucion.factura.values.CostoTotal;
+import co.com.sofkau.logisticaYDistribucion.factura.values.CostoPedido;
 import co.com.sofkau.generic.values.Estado;
 import co.com.sofkau.logisticaYDistribucion.factura.values.FacturaId;
 import co.com.sofkau.logisticaYDistribucion.pedido.Cliente;
@@ -17,7 +17,7 @@ import java.util.List;
 public class Factura extends AggregateEvent<FacturaId>{
     protected Fecha fecha;
     protected Estado estado;
-    protected CostoTotal costoTotal;
+    protected CostoPedido costoTotal;
     protected List<Pedido> pedidos;
     protected Cliente cliente;
     protected Vendedor vendedor;
@@ -26,7 +26,7 @@ public class Factura extends AggregateEvent<FacturaId>{
         super(entityId);
     }
 
-    public Factura(FacturaId facturaId, Fecha fecha, Estado estado, CostoTotal costoTotal, List<Pedido> pedidos, Cliente cliente, Vendedor vendedor) {
+    public Factura(FacturaId facturaId, Fecha fecha, Estado estado, CostoPedido costoTotal, List<Pedido> pedidos, Cliente cliente, Vendedor vendedor) {
         super(facturaId);
         this.fecha = fecha;
         this.estado = estado;
@@ -41,6 +41,10 @@ public class Factura extends AggregateEvent<FacturaId>{
     }
 
     public void cambiarEstado(FacturaId facturaId, Estado estado){
+        appendChange(new EstadoActualizado(facturaId, estado)).apply();
+    }
+
+    public void calcularCostoTotal(CostoPedido costoTotal){
         appendChange(new EstadoActualizado(facturaId, estado)).apply();
     }
 
