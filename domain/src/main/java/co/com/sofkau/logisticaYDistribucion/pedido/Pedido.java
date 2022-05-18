@@ -1,6 +1,7 @@
 package co.com.sofkau.logisticaYDistribucion.pedido;
 
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofkau.generic.values.Estado;
 import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofkau.generic.values.Fecha;
 import co.com.sofkau.generic.values.Nombre;
