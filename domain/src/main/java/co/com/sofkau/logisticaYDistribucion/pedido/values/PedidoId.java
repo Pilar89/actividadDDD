@@ -8,8 +8,11 @@ public class PedidoId extends Identity {
     super(id);
   }
 
-  public PedidoId() {}
- public static PedidoId of(String id){
+  public PedidoId() {
+
+  }
+
+  public static PedidoId of(String id){
     return new PedidoId(id);
  }
 

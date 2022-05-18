@@ -44,7 +44,7 @@ public class Factura extends AggregateEvent<FacturaId>{
         appendChange(new EstadoActualizado(facturaId, estado)).apply();
     }
 
-    public void calcularCostoTotal(CostoPedido costoTotal){
+    public void calcularCostoTotal(FacturaId facturaId , CostoPedido costoTotal){
         appendChange(new EstadoActualizado(facturaId, estado)).apply();
     }
 
