@@ -2,9 +2,9 @@ package co.com.sofkau.logisticaYDistribucion.pedido.events;
 
 import co.com.sofka.domain.generic.DomainEvent;
 import co.com.sofkau.logisticaYDistribucion.pedido.Cliente;
-import co.com.sofkau.logisticaYDistribucion.pedido.values.Estado;
-import co.com.sofkau.logisticaYDistribucion.pedido.values.Fecha;
-import co.com.sofkau.logisticaYDistribucion.pedido.values.Vendedor;
+import co.com.sofkau.logisticaYDistribucion.pedido.Vendedor;
+import co.com.sofkau.generic.values.Estado;
+import co.com.sofkau.generic.values.Fecha;
 
 public class PedidoCreado extends DomainEvent {
   private final Cliente cliente;
