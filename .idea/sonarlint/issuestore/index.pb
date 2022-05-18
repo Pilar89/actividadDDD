@@ -1,6 +1,4 @@
 
-p
-@domain/src/main/java/co/com/sofkau/generic/values/ClienteId.java,4\3\4334b0fb1b61b89d7dc39966327d1b1058fd0aad
 h
 8domain/src/main/java/co/com/sofkau/generic/Vendedor.java,7\c\7cb2ff38edc29f3a2c578e9a44d148aa0193d583
 q
@@ -15,8 +13,6 @@ Udomain/src/main/java/co/com/sofkau/logisticaYDistribucion/pedido/values/Cantida
 Qdomain/src/main/java/co/com/sofkau/logisticaYDistribucion/pedido/Medicamento.java,5\0\502cd3949cf49aa14e0955792aa1457588bc685a
 ~
 Ndomain/src/main/java/co/com/sofkau/logisticaYDistribucion/pedido/Vendedor.java,a\3\a34915819cf000b0ae0c73cb9a102c1974c63de8
-}
-Mdomain/src/main/java/co/com/sofkau/logisticaYDistribucion/pedido/Cliente.java,c\c\cc7fe0d62bae9572a09ef15ef617871213d94bd9
 è
 _domain/src/main/java/co/com/sofkau/logisticaYDistribucion/factura/events/EstadoActualizado.java,3\d\3df7e87032a774233a2287dd53a52e5eaa94199d
 m
@@ -27,7 +23,5 @@ m
 ]domain/src/main/java/co/com/sofkau/logisticaYDistribucion/pedido/values/CostoTotalPedido.java,1\7\17bc4d44d876383e42e3b19e27621dd60f7d0db3
 è
 _domain/src/main/java/co/com/sofkau/logisticaYDistribucion/factura/values/CostoTotalPedidos.java,1\a\1a8a6ea63cde9ed9bed503a336e8bf08967d581e
-ç
-]domain/src/main/java/co/com/sofkau/logisticaYDistribucion/factura/events/FacturaAgregada.java,3\2\32b101b265d53bb2cc32bcfc5cece87c4fed462f
 é
 ^domain/src/main/java/co/com/sofkau/logisticaYDistribucion/pedido/events/MedicamentoCreado.java,e\0\e0d7dc0c3e5b1fef056c674c780263d20b86256c
